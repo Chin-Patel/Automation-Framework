@@ -1,0 +1,11 @@
+# Gradle
+.gradle
+/build/
+out/
+gradle/wrapper/*
+gradle/
+gradlew
+gradlew.bat
+
+# Idea
+.idea/
