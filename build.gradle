@@ -1,6 +1,13 @@
+
 plugins {
     id 'java'
+    id 'groovy'
 }
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+//def cucumberVersion = "6.3.0"
 
 group 'org.example'
 version '1.0-SNAPSHOT'
@@ -10,8 +17,23 @@ repositories {
 }
 
 dependencies {
+    implementation 'Downloads:groovy:groovy-3.0.7'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+    // https://mvnrepository.com/artifact/com.google.inject/guice
+    implementation group: 'com.google.inject', name: 'guice', version: '4.2.3'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-guice
+    implementation group: 'io.cucumber', name: 'cucumber-guice', version: '6.3.0'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
+    testImplementation group: 'io.cucumber', name: 'cucumber-junit', version: '6.3.0'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+    implementation group: 'io.cucumber',  name: 'cucumber-java', version: '6.3.0'
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.12.1'
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation group: 'junit', name: 'junit', version: '4.13.1'
+
+
 }
 
 test {
