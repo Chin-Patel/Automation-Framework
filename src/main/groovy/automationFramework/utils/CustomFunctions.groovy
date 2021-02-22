@@ -3,9 +3,8 @@ import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 
-//import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 
-public class CustomFunctions{
+class CustomFunctions{
 
     public yamlToJson(String filePath){
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory())
