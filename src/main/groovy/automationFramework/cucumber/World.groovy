@@ -1,5 +1,4 @@
-import automationFramework.CustomFunctions
-
+import automationFramework.utils.CustomFunctions
 import com.fasterxml.jackson.databind.JsonNode
 
 
