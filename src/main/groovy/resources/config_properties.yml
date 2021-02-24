@@ -1,0 +1,8 @@
+# Standardised config for all envrionments
+
+DriverConfig:
+  chromeOptions:
+    - "--headless"
+    - "--start-maximized"
+  chromeCapabilities:
+    takeScreenshot: true
