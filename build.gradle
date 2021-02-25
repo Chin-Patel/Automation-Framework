@@ -48,3 +48,21 @@ task cucumber(type: Test){
 }
 
 build.dependsOn cucumber
+
+task fatJar(type: Jar) {
+
+//    archiveClassifier = "all"
+    from ("src/test/resources") {
+        into ("src/test/resources")
+    }
+    from sourceSets.main.output
+    from sourceSets.test.output
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    with jar
+    manifest {
+        attributes 'Main-Class': 'cucumber.api.cli.Main'
+    }
+}
