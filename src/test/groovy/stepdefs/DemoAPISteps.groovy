@@ -14,7 +14,6 @@ class DemoAPISteps {
     @Given("I make a get request to json place holder")
     public void i_calculate_x() {
         JsonNode result = restLibrary.makeRestCall("https://jsonplaceholder.typicode.com/todos/1", "")
-        println(world.env)
-        println(1 + 2)
+
     }
 }

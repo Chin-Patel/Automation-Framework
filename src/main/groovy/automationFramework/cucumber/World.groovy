@@ -8,7 +8,8 @@ import org.apache.commons.io.FileUtils
 class World{
     public final CustomFunctions customFunctions = new CustomFunctions()
     public final String USER_DIR = System.getProperty("user.dir")
-    public final String env = System.getProperty("env")
+    public final String env = System.properties.getProperty("env")
+    public map = [:]
     JsonNode dataNode = null
     JsonNode envNode = null
     JsonNode configNode = null
@@ -16,10 +17,9 @@ class World{
         println("Instantiating World")
         println("Testing in environment: ${env}")
         println("Loading test data")
-        String dataFilePath = USER_DIR + "/src/test/resources/testdata/" + env + "/data.yml"
+        String dataFilePath = "src/test/resources/testdata/" + env + "/data.yml"
         dataNode = customFunctions.yamlToJson(FileUtils.readFileToString(new File(dataFilePath), "UTF-8"))
         println("Loaded Data")
-
     }
 
 }
