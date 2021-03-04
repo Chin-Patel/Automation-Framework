@@ -5,14 +5,14 @@ import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory
 import com.google.inject.Inject
+import org.apache.commons.io.FileUtils
 
 
 class CustomFunctions{
 
-    @Inject
-    World world
+    @Inject World world
 
-    public yamlToJson(String filePath){
+    yamlToJson(String filePath){
         ObjectMapper mapper = new ObjectMapper(new YAMLFactory())
         try{
             JsonNode jsonNode = mapper.readTree(filePath)
@@ -24,11 +24,10 @@ class CustomFunctions{
     }
 
     void loadDataFile(){
-        final RUNTIME_DATA_PATH = "/src/test/resources"
         ObjectMapper mapper = new ObjectMapper()
-        File runtimeData = new File(world.USER_DIR + RUNTIME_DATA_PATH)
+        File runtimeData = new File(world.USER_DIR + world.RUNTIME_DATA_PATH)
         if(runtimeData.exists()){
-
+            world.dataNode = mapper.readTree(FileUtils.readFileToString(runtimeData, Constants.DEFAULT_CHARSET))
         }
     }
 

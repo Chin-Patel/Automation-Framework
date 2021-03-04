@@ -17,8 +17,9 @@ class DemoAPISteps {
     @Inject CustomFunctions customFunctions
     @Given("I make a get request to json place holder")
     public void i_calculate_x() {
-        l
+        customFunctions.loadDataFile()
         JsonNode result = restLibrary.makeRestCall("https://jsonplaceholder.typicode.com/todos/1", "")
+
 
     }
 
